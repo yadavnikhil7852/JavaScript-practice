@@ -1,0 +1,34 @@
+document.getElementById("getWeather").addEventListener("click" , async ()=>{
+    const city = document.getElementById("cityInput").value.trim();
+    const output = document.getElementById("output");
+
+    if(!city){
+output.innerText=" ⚠️ Please Enter a city name"
+return;
+    }
+ 
+    output.innerText=" ⛅ Fetching Weather..."
+
+    try {
+        const API_KEY = "818fdd7101170d809b67c24e08bd38d0";
+         const res = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+    );
+const data = await res.json();
+    
+    if (!res.ok) throw new Error("City not found!");
+
+    
+
+    // 2. Display results
+    output.innerHTML = `
+      <h3>${data.name} (${data.sys.country})</h3>
+      <p>🌡️ Temp: ${data.main.temp}°C</p>
+      <p>💨 Wind: ${data.wind.speed} m/s</p>
+      <p>☁️ Condition: ${data.weather[0].description}</p>
+    `;
+  } catch (err) {
+    output.innerText = "❌ " + err.message;
+  }
+
+})
