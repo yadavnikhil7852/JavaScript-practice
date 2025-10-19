@@ -1,0 +1,12 @@
+console.log("hello oops");
+//js code to create object
+let obj = {
+    name: "nikhil yadav",
+    age: 20,
+    mobile_no: 8368918725,
+    indroduceMyself: function () {
+        console.log("hello my name is nikhil");
+    }
+}
+console.log(obj);
+console.log(typeof(obj));
