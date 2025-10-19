@@ -1,0 +1,22 @@
+console.log("hello oops");
+//js code to create object
+let Student1 = {
+    name: "nikhil yadav",//properrty
+    age: 20,
+    mobile_no: 8368918725,
+    indroduceMyself: function () { //method
+        console.log(`hello my name is ${this.name} , my age is${this.age} , my mobile number is ${this.mobile_no}`);
+    }
+}
+
+
+Student1.indroduceMyself()
+
+let Student2 = {
+    name: "Rahul rastogi",//properrty
+    age: 20,
+    mobile_no: 7678658204,
+    indroduceMyself: function () { //method
+        console.log(`hello my name is ${this.name} , my age is${this.age} , my mobile number is ${this.mobile_no}`);
+    }
+}
